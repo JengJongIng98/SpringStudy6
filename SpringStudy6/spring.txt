@@ -1,0 +1,87 @@
+공유폴더/SPRING
+
+Spring  Framework / SpringBoot  Framework  => Java Framework중 하나
+
+ Frame + work : 이미 작업된(구조가 생성된) 작업을 수행하는일
+           => (소프트웨어적 관점) 기능을 미리 클래스/인터페이스 형태로
+                구현해놓은 형태(반제품)
+
+ 'Spring MVC'
+
+  * Spring  Framework / SpringBoot  Framework 
+ 
+  아직까진 대중화 방법(코드)  / 최신의 기술
+     다양한 정보 제공(블로그,구글링) 
+  기존 프로젝트 구조이해 
+  다양한 버전의 라이브러리 사용 / 특정 버전만 사용가능(최적화)
+   초기 세팅(설정)이 어려움(복잡) / 초기 세팅이 매우 쉬움
+
+ *  SPRING 프레임워크 주요 개념
+  - EJB보다 가벼운 프레임워크 (경량 프레임워크)
+  - IoC (Inversion of Control) : 제어의 역행이라는 기술을 사용해서 객체간의
+                                         느슨한 결합을 사용가능
+  - DI (Dependency Injection) : 의존성 주입기술 제공(자원관리)
+  - AOP (Aspect Oriented Programming) : 관점 지향 프로그래밍
+  - 영속성(Persistence)관련 다양한 기능 제공
+
+ * SPRING 제공 기능
+ - core : 다른 기능들과 설정을 분리하기위해서 IoC 제공
+ - context : 객체(bean)를 다양한 애플리케이션에서 접근 가능하도록 제공
+ - DAO : JDBC 기능을 조금더 편리하게 제공
+ - ORM : 영속성 관련 프레임워크 연동기능 제공(하이버네이트, 마이바티스) 
+ - AOP : 관점 지향 프로그래밍 제공
+ - web : 웹 개발에 필요한 정보(기능)제공
+ - webMVC :   스프링MVC 개발에 필요한 기능 제공
+
+
+D:\Shared\workspace_sts6\.metadata\.plugins\org.springsource.ide.eclipse.commons.content.core
+
+공유폴더 https-content.xml파일 복사
+
+
+p122
+	JSPMVC
+	
+	요청	<-> Controller - Model(action) - DAO - DB
+				||
+			   View
+			   
+	SpringMVC
+							HandlerMapping
+							//
+	요청	<-> DispatcherServlet - HandlerAdapter - Controller - Service - DAO - DB
+				||			\\
+				||			ViewResolver
+			   View(JSP)
+			   
+ * 프로젝트의 구성
+ 
+ - Presentation Layer : UI를 담당하는 요소 (뷰페이지)
+ - Business Layer (Service Layer) : 서비스 계층, 요구사항을 처리하는 계층
+ - Data Access Layer (Persistence Layer) : 영속계층, 데이터 처리하는 계층
+ 
+ 
+ 요청 - Controller    -      Service   - DAO - DB
+ 		 |
+ 		 View
+ 		 
+ Presentation Layer | Business Layer | Data Access Layer
+ 
+ 
+ * Data Access Layer 구성
+ 
+  DAO -(Mybatis-Spring)- MyBatis(SqlSessionFactory) - DB
+  
+ * Mybatis (iBatis) : SQL Mapper 라이브러리(프레임워크)
+  - try-catch-finally (생략), pstmt 객체 (생략), rs 객체 (생략)
+  	=> 소스코드의 분량이 줄어들어서 효율 증가
+  	
+  - SQL 구문을 구분(파일 분리)
+  - spring과의 자동 연동으로 처리
+  - 동적 SQL 구문 제공
+  
+  
+  https://mvnrepository.com/artifact/org.mybatis/mybatis
+  https://mvnrepository.com/artifact/org.mybatis/mybatis-spring
+  https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+  https://mvnrepository.com/artifact/org.springframework/spring-test
