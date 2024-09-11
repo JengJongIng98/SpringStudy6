@@ -21,6 +21,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(
 		locations = {"file:src/main/webapp/WEB-INF/spring/root-context.xml"}
 		)
+// => 테스트할때 필요한 정보(설정)등을 가져오도록 설정
+
 public class DataSourceTest {
 	
 	

@@ -85,3 +85,38 @@ p122
   https://mvnrepository.com/artifact/org.mybatis/mybatis-spring
   https://mvnrepository.com/artifact/org.springframework/spring-jdbc
   https://mvnrepository.com/artifact/org.springframework/spring-test
+  
+  * Mybatis 사용법
+  
+  1) XML사용 SQL문을 작성, DAO에서 xml코드 호출
+  	장점 : 별도의 파일에서 sql구문 관리 유지보수 적합
+  	단점 : 코드 분량이 증가, 작업 복잡도 증가
+  	
+  2) 어노테이션사용 SQL문 작성, DAO 인터페이스 형태
+  	장점 : 코드분량 감소, 생산성 증가
+  	단점 : SQL수정할때 매번 컴파일 수행
+  	
+  3) XML + 어노테이션 같이 사용
+  	장점 : 간단한 SQL 어노테이션, 복잡한건 XML파일 구분
+  	단점 : 개발자의 실력과 경험에 따른 차이가 발생
+  
+  * 도메인(domain) : 개발에 필요한 중요한 개념을 나타내는 명사
+  	=> 물리적으로 분리가능한 객체의 단위 => 디비 테이블 생성하는 단위
+  	
+  * Mybatis 개발 순서
+  
+  	- DB생성 & 테이블 생성 (+계정 권한)
+  	- 도메인 객체의 설계, 클래스 생성 (=> DTO객체)
+  	- DAO 인터페이스 생성
+  	- 실행에 필요한 동작(추상메서드)을 정의
+  	- XML파일을 사용해서 mapper 생성 (SQL를 저장)
+  	- mapper파일에 DTD를 추가
+  	- mapper파일의 위치(저장경로) 설정
+  	- SQL구문 작성
+  	- mybatis에서 해당mapper파일을 인식하도록 설정
+  	- DAO 구현
+  	- 스프링에서 실행(테스트)
+  	
+  	CREATE TABLE 'springdb', 'tbl_member' (
+  	...
+  	)
