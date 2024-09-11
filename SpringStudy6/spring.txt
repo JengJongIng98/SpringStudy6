@@ -106,7 +106,7 @@ p122
   * Mybatis 개발 순서
   
   	- DB생성 & 테이블 생성 (+계정 권한)
-  	- 도메인 객체의 설계, 클래스 생성 (=> DTO객체)
+  	- 도메인 객체의 설계, 클래스 생성 (=> DTO객체) + lombok라이브러리
   	- DAO 인터페이스 생성
   	- 실행에 필요한 동작(추상메서드)을 정의
   	- XML파일을 사용해서 mapper 생성 (SQL를 저장)
@@ -120,3 +120,14 @@ p122
   	CREATE TABLE 'springdb', 'tbl_member' (
   	...
   	)
+  	
+  	* Project lombok 설치
+  	https://projectlombok.org/download
+  	
+  	CMD 창에서 파일이 있는 위치 이동 후 "java -jar lombok.jar"
+  	
+  	STS 파일 위치 추가 install
+  	
+  	(기존)바로가기 파일제거 -> 다시 생성
+  	
+  	프로젝트에 lombok 라이브러리 추가

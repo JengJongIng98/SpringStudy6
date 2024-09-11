@@ -35,12 +35,15 @@
 		  <!-- classpath:/ 는 src/main/resources 폴더를 의미한다. -->
 		  <property name="configLocation"
 		  			value="classpath:/mybatis-config.xml" />
+		  <property name="mapperLocations"
+		  			value="classpath:/mappers/**/*Mapper.xml" />
 	
 	</bean>
 	<!-- SqlSessionFactory : connection생성(+연결정보), SQL쿼리 실행, Mybatis -->
 	
 	
-	
+	<!-- <bean id="memberDAOImpl" class="com.itwillbs.persistence.MemberDAOImpl"></bean> -->
+	<context:component-scan base-package="com.itwillbs.persistence" />
 	
 	
 	
