@@ -30,8 +30,14 @@
 	${vo } <hr>
 	<%-- ${requestScope } --%>
 	${memberVO } <hr>
+	${vo1 } <hr>
+	${adminVO } <hr>
 	
-	${vo1 }
+	<hr>
+	userid : ${userid }
+	userid : ${param.userid }
+	userpw : ${userpw }
+	userpw : ${param.userpw }
 	
 	
 </body>
