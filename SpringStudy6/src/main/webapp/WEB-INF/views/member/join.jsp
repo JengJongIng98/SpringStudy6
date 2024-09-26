@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>joinMember.jsp</h1>
+	<h1>/views/member/join.jsp</h1>
 	
 	<fieldset>
 		<legend> 회원가입 </legend>

@@ -32,4 +32,5 @@ public interface MemberDAO {
 	// 사용자 정보 목록조회
 	public List<MemberVO> getMemberList();
 	
+	
 }

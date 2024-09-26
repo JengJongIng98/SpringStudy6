@@ -146,4 +146,5 @@ public class MemberDAOImpl implements MemberDAO{
 		return sqlSession.selectList(NAMESPACE + ".getMemberList");
 	}
 	
+	
 }
