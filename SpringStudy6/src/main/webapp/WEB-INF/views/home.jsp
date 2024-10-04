@@ -2,6 +2,9 @@
 <%@ page session="false" %>
 <html>
 <head>
+	<!-- <link rel="stylesheet" type="text/css" href="resources/style.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="./resources/style.css"> -->
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/resources/style.css">
 	<title>Home</title>
 </head>
 <body>
