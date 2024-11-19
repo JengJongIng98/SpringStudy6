@@ -23,6 +23,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import net.coobird.thumbnailator.Thumbnails;
+
 @Controller
 @RequestMapping(value = "/file/*")
 public class FileUploadController {
@@ -149,6 +151,48 @@ public class FileUploadController {
 		out.close();
 		
 		// /file/download.jsp 뷰페이지 연결
+	}
+	
+	//썸네일 다운로드
+	@RequestMapping(value = "/thDownload",method = RequestMethod.GET)
+	public void thumbDownload(@RequestParam("fileName") String fileName, HttpServletResponse response) throws Exception {
+		
+		OutputStream out = response.getOutputStream();
+		
+		// 다운로드할 파일
+		File dFile = new File("C:\\upload\\"+fileName);
+		
+		// coffee-blue.jpg => .png 타입으로 변경
+		int lastIdx = fileName.lastIndexOf(".");
+		String onlyFileName = fileName.substring(0, lastIdx);
+		
+		logger.info(" onlyFileName : "+onlyFileName);
+		
+		File thumbnail = new File("C:\\upload\\"+"thumbnail\\"+onlyFileName+".png");
+		
+		// [썸네일 파일 생성 X & 화면에 출력]
+		if(dFile.exists()) {
+			// 썸네일 파일을 화면출력
+			Thumbnails.of(dFile).size(50, 50).outputFormat("png").toOutputStream(out);
+		}else {
+			return ;
+		}
+		
+		
+		/* [썸네일 파일 생성 & 화면에 출력]
+		 * //썸네일 파일 생성 if(dFile.exists()) { thumbnail.getParentFile().mkdirs();
+		 * Thumbnails.of(dFile).size(50, 50).outputFormat("png").toFile(thumbnail); }
+		 * 
+		 * // 썸네일 이미지 출력 FileInputStream fis = new FileInputStream(thumbnail);
+		 * 
+		 * byte[] buffer = new byte[1024*8];
+		 * 
+		 * int data = 0; while( (data = fis.read(buffer)) != -1 ) {
+		 * out.write(buffer,0,data); } out.flush();
+		 * 
+		 * out.close(); fis.close();
+		 */
+		
 	}
 	
 }// controller

@@ -21,7 +21,9 @@
 		<%-- 파일: <a href="C:/upload/${file }">${file }</a> <br> --%>
 		파일: <a href="/file/download?fileName=${file }">${file }</a> <br>
 		
-		<img src="/file/download?fileName=${file }">
+		<img src="/file/download?fileName=${file }">	<br>
+		
+		썸네일 : <img src="/file/thDownload?fileName=${file }"> <br>
 	</c:forEach>
 	
 	<a href="/file/form"> 다시 업로드 </a>
